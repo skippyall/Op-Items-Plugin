@@ -29,6 +29,8 @@ public class Armor {
             m.addEnchant(Enchantment.SOUL_SPEED, soullevel, true);
             m.addEnchant(Enchantment.DEPTH_STRIDER, depthlevel, true);
             m.addEnchant(Enchantment.PROTECTION_FALL, fallprotlevel, true);
+        } else {
+            return null;
         }
         m.setUnbreakable(unbreakable);
         if (!unbreakable) {
