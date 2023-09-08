@@ -7,3 +7,5 @@ depend:
 permissions:
   opitems.give:
     default: op
+  opitems.create:
+    default: op
