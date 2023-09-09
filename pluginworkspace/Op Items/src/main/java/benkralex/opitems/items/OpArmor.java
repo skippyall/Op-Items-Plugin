@@ -1,5 +1,6 @@
 package benkralex.opitems.items;
 
+import benkralex.opitems.config.Config;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -16,10 +17,7 @@ public class OpArmor {
         enchantments.put(Enchantment.PROTECTION_EXPLOSIONS, 3);
         enchantments.put(Enchantment.PROTECTION_FIRE, 3);
         enchantments.put(Enchantment.PROTECTION_PROJECTILE, 3);
-        List lore = new ArrayList<>();
-        lore.add("");
-        lore.add(ChatColor.GOLD + "" + ChatColor.BOLD + "Epic");
-        return ItemBuilder.buildItem(Material.DIAMOND_CHESTPLATE, true, "OP-Diamond-Chestplate", enchantments, lore, "opchestplate");
+        return ItemBuilder.buildItem(Material.DIAMOND_CHESTPLATE, true, "OP-Diamond-Chestplate", enchantments, Config.getRareityName(), "opchestplate");
     }
 
     public static ItemStack opHelmet() {
@@ -30,10 +28,7 @@ public class OpArmor {
         enchantments.put(Enchantment.PROTECTION_PROJECTILE, 3);
         enchantments.put(Enchantment.OXYGEN, 5);
         enchantments.put(Enchantment.WATER_WORKER, 2);
-        List lore = new ArrayList<>();
-        lore.add("");
-        lore.add(ChatColor.GOLD + "" + ChatColor.BOLD + "Epic");
-        return ItemBuilder.buildItem(Material.DIAMOND_HELMET, true, "OP-Diamond-Helmet", enchantments, lore, "ophelmet");
+        return ItemBuilder.buildItem(Material.DIAMOND_HELMET, true, "OP-Diamond-Helmet", enchantments, Config.getRareityName(), "ophelmet");
     }
 
     public static ItemStack opLeggings() {
@@ -43,10 +38,7 @@ public class OpArmor {
         enchantments.put(Enchantment.PROTECTION_FIRE, 3);
         enchantments.put(Enchantment.PROTECTION_PROJECTILE, 3);
         enchantments.put(Enchantment.SWIFT_SNEAK, 4);
-        List lore = new ArrayList<>();
-        lore.add("");
-        lore.add(ChatColor.GOLD + "" + ChatColor.BOLD + "Epic");
-        return ItemBuilder.buildItem(Material.DIAMOND_LEGGINGS, true, "OP-Diamond-Leggings", enchantments, lore, "opleggings");
+        return ItemBuilder.buildItem(Material.DIAMOND_LEGGINGS, true, "OP-Diamond-Leggings", enchantments, Config.getRareityName(), "opleggings");
     }
 
     public static ItemStack opBoots() {
@@ -58,9 +50,6 @@ public class OpArmor {
         enchantments.put(Enchantment.PROTECTION_FALL, 5);
         enchantments.put(Enchantment.SOUL_SPEED, 4);
         enchantments.put(Enchantment.DEPTH_STRIDER, 4);
-        List lore = new ArrayList<>();
-        lore.add("");
-        lore.add(ChatColor.GOLD + "" + ChatColor.BOLD + "Epic");
-        return ItemBuilder.buildItem(Material.DIAMOND_BOOTS, true, "OP-Diamond-Boots", enchantments, lore, "opboots");
+        return ItemBuilder.buildItem(Material.DIAMOND_BOOTS, true, "OP-Diamond-Boots", enchantments, Config.getRareityName(), "opboots");
     }
 }

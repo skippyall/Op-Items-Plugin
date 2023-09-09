@@ -1,5 +1,6 @@
 package benkralex.opitems.items;
 
+import benkralex.opitems.config.Config;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -20,10 +21,7 @@ public class OpTools {
         enchantments.put(Enchantment.FIRE_ASPECT, 4);
         enchantments.put(Enchantment.KNOCKBACK, 10);
         enchantments.put(Enchantment.LOOT_BONUS_MOBS, 4);
-        List lore = new ArrayList<>();
-        lore.add("");
-        lore.add(ChatColor.GOLD + "" + ChatColor.BOLD + "Epic");
-        return ItemBuilder.buildItem(Material.DIAMOND_SWORD, true, "OP-Diamond-Sword", enchantments, lore, "opsword");
+        return ItemBuilder.buildItem(Material.DIAMOND_SWORD, true, "OP-Diamond-Sword", enchantments, Config.getRareityName(), "opsword");
     }
     public static ItemStack opAxe(boolean silktouch) {
         HashMap<Enchantment, Integer> enchantments = new HashMap<Enchantment, Integer>();
@@ -37,10 +35,7 @@ public class OpTools {
         } else {
             enchantments.put(Enchantment.LOOT_BONUS_BLOCKS, 4);
         }
-        List lore = new ArrayList<>();
-        lore.add("");
-        lore.add(ChatColor.GOLD + "" + ChatColor.BOLD + "Epic");
-        return ItemBuilder.buildItem(Material.DIAMOND_AXE, true, "OP-Diamond-Axe", enchantments, lore, "opaxe");
+        return ItemBuilder.buildItem(Material.DIAMOND_AXE, true, "OP-Diamond-Axe", enchantments, Config.getRareityName(), "opaxe");
     }
     public static ItemStack opPickaxe(boolean silktouch) {
         HashMap<Enchantment, Integer> enchantments = new HashMap<Enchantment, Integer>();
@@ -53,7 +48,7 @@ public class OpTools {
         List lore = new ArrayList<>();
         lore.add("");
         lore.add(ChatColor.GOLD + "" + ChatColor.BOLD + "Epic");
-        return ItemBuilder.buildItem(Material.DIAMOND_PICKAXE, true, "OP-Diamond-Pickaxe", enchantments, lore, "oppickaxe");
+        return ItemBuilder.buildItem(Material.DIAMOND_PICKAXE, true, "OP-Diamond-Pickaxe", enchantments, Config.getRareityName(), "oppickaxe");
     }
     public static ItemStack opShovel(boolean silktouch) {
         HashMap<Enchantment, Integer> enchantments = new HashMap<Enchantment, Integer>();
@@ -63,10 +58,7 @@ public class OpTools {
         } else {
             enchantments.put(Enchantment.LOOT_BONUS_BLOCKS, 4);
         }
-        List lore = new ArrayList<>();
-        lore.add("");
-        lore.add(ChatColor.GOLD + "" + ChatColor.BOLD + "Epic");
-        return ItemBuilder.buildItem(Material.DIAMOND_SHOVEL, true, "OP-Diamond-Shovel", enchantments, lore, "opshovel");
+        return ItemBuilder.buildItem(Material.DIAMOND_SHOVEL, true, "OP-Diamond-Shovel", enchantments, Config.getRareityName(), "opshovel");
     }
     public static ItemStack opHoe(boolean silktouch) {
         HashMap<Enchantment, Integer> enchantments = new HashMap<Enchantment, Integer>();
@@ -76,9 +68,6 @@ public class OpTools {
         } else {
             enchantments.put(Enchantment.LOOT_BONUS_BLOCKS, 4);
         }
-        List lore = new ArrayList<>();
-        lore.add("");
-        lore.add(ChatColor.GOLD + "" + ChatColor.BOLD + "Epic");
-        return ItemBuilder.buildItem(Material.DIAMOND_HOE, true, "OP-Diamond-Hoe", enchantments, lore, "ophoe");
+        return ItemBuilder.buildItem(Material.DIAMOND_HOE, true, "OP-Diamond-Hoe", enchantments, Config.getRareityName(), "ophoe");
     }
 }
