@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 public class DropListener implements Listener {
     @EventHandler
     public static void onLootGenerate(BlockBreakEvent e) {
-        if (Config.getSurvivalObtainable()) return;
+        if (!Config.getSurvivalObtainable()) return;
         Random random = new Random();
         Logger logger = OpItems.opItems.getLogger();
         int randomint = random.nextInt(0, 200);
