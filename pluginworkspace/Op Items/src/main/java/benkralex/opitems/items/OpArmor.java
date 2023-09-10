@@ -55,7 +55,6 @@ public class OpArmor {
         enchantments.put(Enchantment.PROTECTION_EXPLOSIONS, 3);
         enchantments.put(Enchantment.PROTECTION_FIRE, 3);
         enchantments.put(Enchantment.PROTECTION_PROJECTILE, 3);
-        enchantments.put(Enchantment.PROTECTION_FALL, 5);
         return ItemBuilder.buildItem(Material.ELYTRA, true, "OP-Elytra", enchantments, Config.getRareityLore(), "opelytra");
     }
 }
