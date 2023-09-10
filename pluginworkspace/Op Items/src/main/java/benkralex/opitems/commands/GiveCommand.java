@@ -16,10 +16,10 @@ public class GiveCommand {
         new CommandAPICommand("opgive")
                 .withPermission("opitems.give")
                 .withSubcommand(new CommandAPICommand("armor")
-                    .withArguments(new MultiLiteralArgument("Armortype", "Helmet", "Chestplate", "Leggings", "Boots"))
+                    .withArguments(new MultiLiteralArgument("Armortype", "Helmet", "Chestplate", "Leggings", "Boots", "Elytra", "all"))
                     .executesPlayer((sender, args)->{getArmor(sender, args);}))
                 .withSubcommand(new CommandAPICommand("tools")
-                    .withArguments(new MultiLiteralArgument("Tooltype", "Sword", "Axe", "Pickaxe", "Shovel", "Hoe"), new BooleanArgument("SilkTouch"))
+                    .withArguments(new MultiLiteralArgument("Tooltype", "Sword", "Axe", "Pickaxe", "Shovel", "Hoe", "Bow", "Crossbow", "all"), new BooleanArgument("SilkTouch"))
                     .executesPlayer((sender, args)->{getTool(sender, args);}))
                 .register();
     }
@@ -32,6 +32,14 @@ public class GiveCommand {
             p.getInventory().addItem(OpArmor.opLeggings());
         } else if (args.get("Armortype").equals("Boots")) {
             p.getInventory().addItem(OpArmor.opBoots());
+        } else if (args.get("Armortype").equals("Elytra")) {
+            p.getInventory().addItem(OpArmor.opElytra());
+        } else if (args.get("Armortype").equals("all")) {
+            p.getInventory().addItem(OpArmor.opHelmet());
+            p.getInventory().addItem(OpArmor.opChestplate());
+            p.getInventory().addItem(OpArmor.opLeggings());
+            p.getInventory().addItem(OpArmor.opBoots());
+            p.getInventory().addItem(OpArmor.opElytra());
         }
     }
     public static void getTool(Player p, CommandArguments args) {
@@ -45,6 +53,18 @@ public class GiveCommand {
             p.getInventory().addItem(OpTools.opShovel((boolean) args.get("SilkTouch")));
         } else if (args.get("Tooltype").equals("Hoe")) {
             p.getInventory().addItem(OpTools.opHoe((boolean) args.get("SilkTouch")));
+        } else if (args.get("Tooltype").equals("Bow")) {
+            p.getInventory().addItem(OpTools.opBow());
+        } else if (args.get("Tooltype").equals("Crossbow")) {
+            p.getInventory().addItem(OpTools.opCrossbow());
+        } else if (args.get("Tooltype").equals("all")) {
+            p.getInventory().addItem(OpTools.opSword());
+            p.getInventory().addItem(OpTools.opAxe((boolean) args.get("SilkTouch")));
+            p.getInventory().addItem(OpTools.opPickaxe((boolean) args.get("SilkTouch")));
+            p.getInventory().addItem(OpTools.opShovel((boolean) args.get("SilkTouch")));
+            p.getInventory().addItem(OpTools.opHoe((boolean) args.get("SilkTouch")));
+            p.getInventory().addItem(OpTools.opBow());
+            p.getInventory().addItem(OpTools.opCrossbow());
         }
     }
 }

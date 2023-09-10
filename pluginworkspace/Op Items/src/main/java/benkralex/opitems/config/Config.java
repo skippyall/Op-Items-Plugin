@@ -12,12 +12,12 @@ public class Config {
 
     public static void createConfig() {
         config.options().copyDefaults(true);
-        config.addDefault("rareity.name", "§l§6Epic");
+        config.addDefault("rareity.name", "§6§k§laa§r§6§l Legendary §r§6§k§laa");
         config.addDefault("knockback", true);
         OpItems.opItems.saveConfig();
     }
 
-    public static List getRareityName() {
+    public static List getRareityLore() {
         List l = new ArrayList<>();
         if (config.get("rareity.name") == null) return l;
         String name = ChatColor.translateAlternateColorCodes('§', (String) config.get("rareity.name"));
