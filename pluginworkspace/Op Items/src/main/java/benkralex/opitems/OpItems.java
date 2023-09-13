@@ -3,7 +3,7 @@ package benkralex.opitems;
 import benkralex.opitems.commands.GiveCommand;
 import benkralex.opitems.config.Config;
 import benkralex.opitems.listeners.BlockBreakListener;
-import benkralex.opitems.listeners.EntityDidedListener;
+import benkralex.opitems.listeners.EntityDiedListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -18,7 +18,7 @@ public final class OpItems extends JavaPlugin {
         getLogger().info("OP-Items Plugin gestartet:");
         getLogger().info("Im Survival bekommbar:" + (Config.getSurvivalObtainable()?"Ja":"Nein"));
         Bukkit.getPluginManager().registerEvents(new BlockBreakListener(), opItems);
-        Bukkit.getPluginManager().registerEvents(new EntityDidedListener(), this);
+        Bukkit.getPluginManager().registerEvents(new EntityDiedListener(), this);
     }
 
     public void onLoad() {

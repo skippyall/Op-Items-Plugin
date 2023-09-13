@@ -1,6 +1,5 @@
 package benkralex.opitems.listeners;
 
-import benkralex.opitems.OpItems;
 import benkralex.opitems.config.Config;
 import benkralex.opitems.items.OpArmor;
 import benkralex.opitems.items.OpTools;
@@ -11,9 +10,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 
 import java.util.Random;
-import java.util.logging.Logger;
 
-public class EntityDidedListener implements Listener {
+public class EntityDiedListener implements Listener {
     @EventHandler
     public static void onEntityDeath(EntityDeathEvent e) {
         if (!Config.getSurvivalObtainable()) return;
@@ -63,7 +61,7 @@ public class EntityDidedListener implements Listener {
         } else if (e.getEntity() instanceof Rabbit) {
             if (randomint == 0 || randomint == 1) {
                 location.getWorld().dropItemNaturally(location, OpArmor.opBoots());
-                Bukkit.broadcastMessage(ChatColor.GOLD + "Op-Boots wurde gefunden worden");
+                Bukkit.broadcastMessage(ChatColor.GOLD + "Op-Boots sind gefunden worden");
             }
         } else if (e.getEntity() instanceof WitherSkeleton) {
             if (randomint == 0 || randomint == 1) {

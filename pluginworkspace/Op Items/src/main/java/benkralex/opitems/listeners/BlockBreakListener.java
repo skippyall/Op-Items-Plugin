@@ -1,15 +1,17 @@
 package benkralex.opitems.listeners;
 
-import benkralex.opitems.OpItems;
 import benkralex.opitems.config.Config;
 import benkralex.opitems.items.OpTools;
-import org.bukkit.*;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.block.data.Ageable;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 
 import java.util.Random;
-import java.util.logging.Logger;
 
 public class BlockBreakListener implements Listener {
     @EventHandler
@@ -36,7 +38,7 @@ public class BlockBreakListener implements Listener {
                 }
                 Bukkit.broadcastMessage(ChatColor.GOLD + "Op-Pickaxe ist gefunden worden");
             }
-        } else if (e.getBlock().getType().equals(Material.BEETROOTS) && e.getBlock().getState().equals(CropState.RIPE)) {
+        } else if (e.getBlock().getType().equals(Material.BEETROOTS) && ((Ageable) e.getBlock().getBlockData()).getAge() == ((Ageable) e.getBlock().getBlockData()).getMaximumAge()) {
             if (randomint == 0 || randomint == 1) {
                 if (randomint == 0) {
                     location.getWorld().dropItemNaturally(location,OpTools.opHoe(true));
