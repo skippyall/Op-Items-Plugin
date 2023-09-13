@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class OpTools {
-    public static ItemStack opSword() {
+    public static ItemStack opSword(boolean knckback) {
         HashMap<Enchantment, Integer> enchantments = new HashMap<Enchantment, Integer>();
         enchantments.put(Enchantment.DIG_SPEED, 6);
         enchantments.put(Enchantment.DAMAGE_ALL, 6);
@@ -19,7 +19,7 @@ public class OpTools {
         enchantments.put(Enchantment.DAMAGE_UNDEAD, 3);
         enchantments.put(Enchantment.SWEEPING_EDGE, 4);
         enchantments.put(Enchantment.FIRE_ASPECT, 4);
-        if (Config.getKnockback()) {
+        if (knckback) {
             enchantments.put(Enchantment.KNOCKBACK, 10);
         }
         enchantments.put(Enchantment.LOOT_BONUS_MOBS, 4);
@@ -87,5 +87,17 @@ public class OpTools {
         enchantments.put(Enchantment.MULTISHOT, 1);
         enchantments.put(Enchantment.PIERCING, 5);
         return ItemBuilder.buildItem(Material.CROSSBOW, true, "OP-Crossbow", enchantments, Config.getRareityLore(), "opcrossbow");
+    }
+    public static ItemStack opTrident(boolean riptide) {
+        HashMap<Enchantment, Integer> enchantments = new HashMap<Enchantment, Integer>();
+        enchantments.put(Enchantment.LOOT_BONUS_MOBS, 3);
+        if (riptide) {
+            enchantments.put(Enchantment.RIPTIDE, 5);
+        } else {
+            enchantments.put(Enchantment.CHANNELING, 1);
+            enchantments.put(Enchantment.LOYALTY, 1);
+        }
+        enchantments.put(Enchantment.IMPALING, 7);
+        return ItemBuilder.buildItem(Material.TRIDENT, true, "OP-Trident", enchantments, Config.getRareityLore(), "optrident");
     }
 }

@@ -1,6 +1,7 @@
 package benkralex.opitems.commands;
 
 import benkralex.opitems.OpItems;
+import benkralex.opitems.config.Config;
 import benkralex.opitems.items.OpArmor;
 import benkralex.opitems.items.OpTools;
 import dev.jorel.commandapi.CommandAPICommand;
@@ -44,7 +45,7 @@ public class GiveCommand {
     }
     public static void getTool(Player p, CommandArguments args) {
         if (args.get("Tooltype").equals("Sword")) {
-            p.getInventory().addItem(OpTools.opSword());
+            p.getInventory().addItem(OpTools.opSword(Config.getKnockback()));
         } else if (args.get("Tooltype").equals("Axe")) {
             p.getInventory().addItem(OpTools.opAxe((boolean) args.get("SilkTouch")));
         } else if (args.get("Tooltype").equals("Pickaxe")) {
@@ -58,7 +59,7 @@ public class GiveCommand {
         } else if (args.get("Tooltype").equals("Crossbow")) {
             p.getInventory().addItem(OpTools.opCrossbow());
         } else if (args.get("Tooltype").equals("all")) {
-            p.getInventory().addItem(OpTools.opSword());
+            p.getInventory().addItem(OpTools.opSword(Config.getKnockback()));
             p.getInventory().addItem(OpTools.opAxe((boolean) args.get("SilkTouch")));
             p.getInventory().addItem(OpTools.opPickaxe((boolean) args.get("SilkTouch")));
             p.getInventory().addItem(OpTools.opShovel((boolean) args.get("SilkTouch")));

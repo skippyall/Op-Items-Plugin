@@ -1,0 +1,8 @@
+benkralex\opitems\listeners\EntityDidedListener.class
+benkralex\opitems\commands\GiveCommand.class
+benkralex\opitems\items\ItemBuilder.class
+benkralex\opitems\OpItems.class
+benkralex\opitems\listeners\BlockBreakListener.class
+benkralex\opitems\config\Config.class
+benkralex\opitems\items\OpArmor.class
+benkralex\opitems\items\OpTools.class
